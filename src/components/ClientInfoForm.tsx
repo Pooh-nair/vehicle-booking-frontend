@@ -8,8 +8,15 @@ import {
   Box,
 } from "@mui/material";
 import { useFormContext } from "../context/FormContext";
+import { ArrowForward } from "@mui/icons-material";
 
-const Step1Name = ({ nextStep }: { nextStep?: () => void }) => {
+const ClientInfoForm = ({
+  nextStep,
+}: {
+  nextStep?: () => void;
+  prevStep?: () => void;
+  reset?: () => void;
+}) => {
   const { formData, setFormData } = useFormContext();
   const [error, setError] = useState(false);
 
@@ -36,7 +43,7 @@ const Step1Name = ({ nextStep }: { nextStep?: () => void }) => {
       <Card sx={{ width: 400, boxShadow: 3, borderRadius: 2, padding: 3 }}>
         <CardContent>
           <Typography variant="h5" align="center" gutterBottom>
-            First, What's your Name?
+            What's your Name?
           </Typography>
 
           <TextField
@@ -75,6 +82,7 @@ const Step1Name = ({ nextStep }: { nextStep?: () => void }) => {
             fullWidth
             sx={{ marginTop: 2 }}
             onClick={handleNext}
+            endIcon={<ArrowForward />}
           >
             Next
           </Button>
@@ -84,4 +92,4 @@ const Step1Name = ({ nextStep }: { nextStep?: () => void }) => {
   );
 };
 
-export default Step1Name;
+export default ClientInfoForm;

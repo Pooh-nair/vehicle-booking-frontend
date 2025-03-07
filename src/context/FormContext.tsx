@@ -6,10 +6,11 @@ export const FormProvider = ({ children }: { children: React.ReactNode }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    wheels: "",
-    vehicleType: "",
-    vehicleModel: "",
-    dateRange: { start: null, end: null },
+    categoryId: null,
+    typeId: null,
+    vehicleId: null,
+    startDate: "",
+    endDate: "",
   });
 
   return (
